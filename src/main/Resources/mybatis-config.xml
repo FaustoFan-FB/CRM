@@ -11,6 +11,14 @@
 		<setting name="logImpl" value="STDOUT_LOGGING"/>
 	</settings>
 	
+	<!--
+		批量定义别名，扫描整个包下的类，别名为类名（首字母大写或小写都可以）
+		name: 包名
+	-->
+	<typeAliases>
+		<package name="com.faustofan.crm.settings.domain"/>
+	</typeAliases>
+	
 	<!-- 配置 mybatis 环境 -->
 	<environments default="mysql">
 		<!--id: 数据源的名称 -->
@@ -33,6 +41,7 @@
 	
 	<mappers>
 		<!-- 告诉 mybatis 要执行的 sql 语句的位置 -->
-		<mapper resource="com/faustofan/dao/XXXDao.xml>"/><!--这里填写mybatis的映射文件-->
+		<!--<mapper resource="com/faustofan/dao/XXXDao.xml>"/>--><!--这里填写mybatis的映射文件-->
+		<package name="com.faustofan.crm.settings.dao"/>
 	</mappers>
 </configuration>
